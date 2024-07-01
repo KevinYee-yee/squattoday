@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>互動網站</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .page {
+            display: none;
+        }
+        .visible {
+            display: block;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        #result img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="home" class="page visible">
+    <h1>讓我來告訴你今天該怎麼練！</h1>
+    <button class="button" onclick="startQuiz()">START</button>
+</div>
+
+<div id="quiz" class="page">
+    <h1>問你今天想練甚麼部位?</h1>
+    <button class="button" onclick="showResult()">胸</button>
+    <button class="button" onclick="showResult()">背</button>
+    <button class="button" onclick="showResult()">腿</button>
+    <button class="button" onclick="showResult()">上肢</button>
+    <button class="button" onclick="showResult()">下肢</button>
+    <button class="button" onclick="showResult()">有氧</button>
+</div>
+
+<div id="result" class="page">
+    <h1>給我去深蹲</h1>
+    <img src="path/to/your/image.png" alt="給我去深蹲">
+</div>
+
+<script>
+    function startQuiz() {
+        document.getElementById('home').classList.remove('visible');
+        document.getElementById('quiz').classList.add('visible');
+    }
+
+    function showResult() {
+        document.getElementById('quiz').classList.remove('visible');
+        document.getElementById('result').classList.add('visible');
+    }
+</script>
+
+</body>
+</html>
